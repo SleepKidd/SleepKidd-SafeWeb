@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>SleepKidd SafeWeb — Твой Цифровой Иммунитет</title>
+    
+    <!-- ПОДКЛЮЧЕНИЕ ПРЕМИАЛЬНЫХ СТИЛЕЙ И СЦЕНАРИЕВ ДВИЖКА -->
+    <link rel="stylesheet" href="style.css">
+    <script defer src="app.js"></script>
+</head>
+<body>
+
+    <!-- ЖИВОЙ СУПЕР-ВИЗУАЛ: ПЛАВАЮЩИЕ НЕОНОВЫЕ СФЕРЫ НА ЗАДНЕМ ПЛАНЕ -->
+    <div class="ambient-layer">
+        <div class="glow-sphere sphere-1" id="sphere1"></div>
+        <div class="glow-sphere sphere-2" id="sphere2"></div>
+    </div>
+
+    <!-- СТРОГАЯ МАТОВАЯ ШАПКА САЙТА (FROSTED GLASS NAV) -->
+    <header class="glass-header">
+        <div class="logo">SleepKidd SafeWeb</div>
+        <nav class="nav-links">
+            <a href="#threats" class="nav-item">Матрица Угроз</a>
+            <a href="#cases" class="nav-item">Анализ Кейсов</a>
+            <a href="#quest" class="nav-item">Кибер-Квест</a>
+        </nav>
+        <!-- Бургер-меню для адаптации под мобильные телефоны -->
+        <div class="menu-burger" id="burgerToggle">
+            <span></span><span></span><span></span>
+        </div>
+    </header>
+
+    <!-- ГЛАВНЫЙ HERO-ЭКРАН С ЭФФЕКТОМ ГЛУБОКОГО СТЕКЛА -->
+    <main class="main-container">
+        <section class="hero-section">
+            <div class="hero-glass-card" id="heroCard">
+                <div class="security-badge">📊 ENTERPRISE PROTECTION SYSTEM</div>
+                <h1 class="hero-title">
+                    Твой цифровой иммунитет:<br>
+                    <span class="gradient-text">Как не оставить шрамов в сети</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Интерактивная платформа по кибербезопасности нового поколения. 
+                    Реальные схемы мошенников, разбор психологических уловок социальной инженерии и 
+                    пошаговые протоколы защиты, адаптированные для взрослых и подростков.
+                </p>
+                <div class="hero-actions">
+                    <a href="#quest" class="btn-premium btn-neon">⚡ Пройти Кибер-Аудит</a>
+                    <a href="#threats" class="btn-premium btn-outline">🛡 Изучить Угрозы</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- МАТРИЦА УГРОЗ: СЕТКА ИНТЕРАКТИВНЫХ ЗOН БЕЗОПАСНОСТИ -->
+        <section class="section-container" id="threats">
+            <div class="section-header">
+                <h2 class="section-title">Матрица Цифровых Угроз</h2>
+                <p class="section-desc">Нажмите на карту любого вектора атаки, чтобы развернуть детальный разбор реальных махинаций и чек-листы противодействия</p>
+            </div>
+
+            <div class="threats-grid">
+                <!-- КАРТОЧКА 1: БАСТИОН ПАРОЛЕЙ И 2FA -->
+                <div class="threat-card" data-index="0">
+                    <div class="card-glass-blur"></div>
+                    <div class="card-content">
+                        <div class="card-icon">🔑</div>
+                        <h3 class="card-title">Бастион Паролей и 2FA</h3>
+                        <p class="card-short-desc">Как хакеры взламывают аккаунты за секунды и почему одного пароля мало.</p>
+                        
+                        <div class="card-expanded-content">
+                            <div class="verdict-block beginner">
+                                <h4>👶 Подростку: Реальные угрозы и защита аккаунта</h4>
+                                <p>• <b>Как разводят:</b> Мошенники используют базы «слитых» паролей с левых игровых сайтов. Если у тебя везде одинаковый пароль (в Steam, Discord, ВК), взломав один форум, они заберут все твои аккаунты.<br>
+                                • <b>Схема «Брутфорс»:</b> Специальные программы перебирают миллионы простых комбинаций (типа <i>"marat2012"</i> или <i>"qwerty"</i>) за пару мгновений.<br>
+                                • <b>Что делать:</b> Придумай пароль по формуле «4 случайных слова + знаки» (например, <i>Tree!Book#Mouse88</i>). Обязательно зайди в настройки Telegram/Discord и включи <b>Двухфакторную аутентификацию (2FA)</b>. Без кода из твоего телефона хакер не войдет, даже зная пароль.</p>
+                            </div>
+                            <div class="verdict-block advanced">
+                                <h4>💼 Взрослому: Протокол изоляции учетных записей</h4>
+                                <p>• <b>Как разводят:</b> Метод «Подмены личности». Взломав вашу старую заброшенную почту, злоумышленники запрашивают сброс паролей на Госуслугах, в онлайн-банках и рабочих сервисах.<br>
+                                • <b>Схема «Перехват СМС»:</b> Мошенники делают дубликат SIM-карты через фальшивую доверенность или перехватывают push-уведомления, чтобы обойти простую СМС-защиту.<br>
+                                • <b>Что делать:</b> Навсегда забудьте привычку использовать один пароль. Для критически важных сервисов (почта, банки, Госуслуги) установите уникальные ключи от 16 знаков. Замените СМС-подтверждения на коды из приложений-аутентификаторов (Google Authenticator, Bitwarden) — их невозможно перехватить удаленно.</p>
+                            </div>
+                        </div>
+                        <button class="btn-card-expand">Развернуть Инструкцию ➔</button>
+                    </div>
+                </div>
+
+                <!-- КАРТОЧКА 2: ФИШИНГ И СОЦИАЛЬНАЯ ИНЖЕНЕРИЯ -->
+                <div class="threat-card" data-index="1">
+                    <div class="card-glass-blur"></div>
+                    <div class="card-content">
+                        <div class="card-icon">🎣</div>
+                        <h3 class="card-title">Фишинг и Уловки в Сети</h3>
+                        <p class="card-short-desc">Как распознать поддельный сайт за 3 секунды и не отдать мошенникам свои доступы.</p>
+                        
+                        <div class="card-expanded-content">
+                            <div class="verdict-block beginner">
+                                <h4>👶 Подростку: Ловушки в мессенджерах и играх</h4>
+                                <p>• <b>Схема «Проголосуй за племянницу»:</b> В Telegram от друга приходит сообщение: <i>«Привет, проголосуй за Софью в конкурсе рисунков, вот ссылка»</i>. Ты переходишь, там просит ввести код от ТГ. Как только вводишь — твой аккаунт крадут и начинают спамить по твоим контактам.<br>
+                                • <b>Схема «Бесплатный Донат»:</b> Сайты-клоны обещают бесплатные робуксы, гемы или скины в CS/Standoff. Кнопка «Войти через Steam» крадет твои данные авторизации.<br>
+                                • <b>Что делать:</b> Никогда не вводи коды авторизации из Telegram на сторонних сайтах. Внимательно смотри на адресную строку: мошенники меняют одну букву (например, <i>te1egram.org</i> вместо <i>telegram.org</i>).</p>
+                            </div>
+                            <div class="verdict-block advanced">
+                                <h4>💼 Взрослому: Атаки на финансы и бизнес</h4>
+                                <p>• <b>Схема «Фейковый начальник»:</b> В мессенджере пишет «директор» вашей компании с требованием срочно связаться со «куратором из ведомства» или оплатить скрытый счет. Аккаунт шефа при этом полностью скопирован (фото, имя), но номер скрыт.<br>
+                                • <b>Схема «Важная посылка / Налог»:</b> На почту приходит письмо-клон от Почты России, СДЭК или ФНС: <i>«Оплатите пошлину 150 рублей, иначе наложим арест»</i>. Ссылка ведет на фальшивую платежную форму.<br>
+                                • <b>Что делать:</b> Внедрите правило «Встречной проверки». Положите трубку, закройте чат и перепроверьте информацию по официальным каналам. Не переходите по ссылкам из писем о внезапных штрафах.</p>
+                            </div>
+                        </div>
+                        <button class="btn-card-expand">Развернуть Инструкцию ➔</button>
+                    </div>
+                </div>
+                <!-- КАРТОЧКА 3: ЦИФРОВОЙ СЛЕД И ШАНТАЖ -->
+                <div class="threat-card" data-index="2">
+                    <div class="card-glass-blur"></div>
+                    <div class="card-content">
+                        <div class="card-icon">🛑</div>
+                        <h3 class="card-title">Цифровой След и Шантаж</h3>
+                        <p class="card-short-desc">Как старые публикации становятся оружием шантажистов и портят карьеру.</p>
+                        
+                        <div class="card-expanded-content">
+                            <div class="verdict-block beginner">
+                                <h4>👶 Подростку: Опасность овершеринга и хейта</h4>
+                                <p>• <b>Схема «Скрытый доксинг»:</b> Ты поссорился в комментариях в игре. Оппонент находит твою страницу, вычисляет по фото твою школу, адрес, телефоны родителей и начинает шантажировать сливом личной переписки.<br>
+                                • <b>Интернет помнит всё:</b> Глупые фотографии, маты или агрессия, отправленные в закрытый чат, могут быть сохранены. Через 5 лет они всплывут при поступлении в вуз.<br>
+                                • <b>Что делать:</b> Не выкладывай фото, где виден твой домашний адрес или ценные вещи. При любой травле (буллинге) — не отвечай злоумышленникам, делай скриншоты, блокируй их и сразу говори родителям.</p>
+                            </div>
+                            <div class="verdict-block advanced">
+                                <h4>💼 Взрослому: Конфиденциальность и безопасность семьи</h4>
+                                <p>• <b>Схема «Социальный инжиниринг»:</b> Мошенники изучают профили ваших детей, узнают клички питомцев, места отдыха и используют эту информацию, чтобы втереться в доверие к вашей семье или подобрать ответы на секретные вопросы банков.<br>
+                                • <b>Схема «Угон аккаунта через фото»:</b> Публикация фотографий рабочих пропусков, билетов на самолет с QR-кодами или документов в соцсетях позволяет хакерам перехватить ваши личные кабинеты.<br>
+                                • <b>Что делать:</b> Закройте профили в соцсетях от посторонних. Внедрите правило «Нулевого овершеринга» для документов и билетов. Периодически проверяйте свои данные на предмет утечек.</p>
+                            </div>
+                        </div>
+                        <button class="btn-card-expand">Развернуть Инструкцию ➔</button>
+                    </div>
+                </div>
+
+                <!-- КАРТОЧКА 4: БЕЗОПАСНЫЕ ДЕНЬГИ И КАРТЫ -->
+                <div class="threat-card" data-index="3">
+                    <div class="card-glass-blur"></div>
+                    <div class="card-content">
+                        <div class="card-icon">💳</div>
+                        <h3 class="card-title">Безопасные Деньги и Карты</h3>
+                        <p class="card-short-desc">Защита банковских счетов, онлайн-шопинг и блокировка автосписаний.</p>
+                        
+                        <div class="card-expanded-content">
+                            <div class="verdict-block beginner">
+                                <h4>👶 Подростку: Карманные деньги под замком</h4>
+                                <p>• <b>Схема «Фейковый гарант»:</b> В сети тебе предлагают купить игровой аккаунт или валюту через «честного гаранта». Ты скидываешь фото карты или переводишь деньги, а тебя блокируют.<br>
+                                • <b>Скрытые подписки:</b> Сайты предлагают «пробный период за 1 рубль». Ты привязываешь карту, а через неделю у тебя списывают все карманные деньги за скрытую подписку.<br>
+                                • <b>What to do:</b> Никогда не фоткай карту с двух сторон. Секретный код с обратной стороны (CVV) и коды из СМС нельзя говорить даже лучшим друзьям.</p>
+                            </div>
+                            <div class="verdict-block advanced">
+                                <h4>💼 Взрослому: Архитектура безопасных платежей</h4>
+                                <p>• <b>Схема «Платежный клон»:</b> Вы покупаете товар на неизвестном сайте. Форма оплаты оказывается фальшивой. Вы вводите данные карты, и мошенники получают к ней полный доступ.<br>
+                                • <b>Схема «Автосписания»:</b> Недобросовестные сервисы прячут условия платных услуг в многостраничных соглашениях, привязывая вашу карту к бесконечным списаниям.<br>
+                                • <b>What to do:</b> Заведите отдельную виртуальную карту для покупок в интернете с нулевым лимитом. Пополняйте её ровно перед оплатой. Запретите в банковском приложении операции в сети без СМС-подтверждения (3D-Secure).</p>
+                            </div>
+                        </div>
+                        <button class="btn-card-expand">Развернуть Инструкцию ➔</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- АНАЛИЗ ИНТЕРАКТИВНЫХ КЕЙСОВ -->
+        <section class="section-container" id="cases">
+            <div class="section-header">
+                <h2 class="section-title">Интерактивный Разбор Кейсов</h2>
+                <p class="section-desc">Реальные жизненные сценарии. Переключайте тумблер, чтобы увидеть ситуацию глазами взрослого или подростка</p>
+            </div>
+
+            <div class="cases-carousel-wrapper">
+                <div class="case-glass-box">
+                    
+                    <!-- Переключатель режимов просмотра -->
+                    <div class="perspective-toggle-zone">
+                        <span class="toggle-label">Режим просмотра:</span>
+                        <div class="toggle-container">
+                            <button class="toggle-btn active" id="btnViewTeens">Подросток ⚡</button>
+                            <button class="toggle-btn" id="btnViewAdults">Взрослый 💼</button>
+                        </div>
+                    </div>
+
+                    <div class="case-slider-content" id="caseSlider">
+                        <!-- Контент генерируется через app.js -->
+                    </div>
+                    
+                    <div class="slider-controls">
+                        <button class="btn-nav-slider" id="prevCase">◀ Назад</button>
+                        <div class="slider-dots" id="sliderDots"></div>
+                        <button class="btn-nav-slider" id="nextCase">Вперед ▶</button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- КИБЕР-КВЕСТ: ИНТЕРАКТИВНЫЙ JS-ТЕСТ НА ТРИГГЕРАХ -->
+        <section class="section-container" id="quest">
+            <div class="section-header">
+                <h2 class="section-title">Встроенный Кибер-Аудит</h2>
+                <p class="section-desc">Пройдите официальный экспресс-тест на прочность вашего цифрового иммунитета</p>
+            </div>
+
+            <div class="quest-card-wrapper">
+                <div class="quest-glass-box" id="questBox">
+                    
+                    <!-- Приветственный экран квеста -->
+                    <div class="quest-step active" id="questIntro">
+                        <div class="quest-icon">⚡</div>
+                        <h3>Готовы проверить себя?</h3>
+                        <p class="quest-text">Вам предстоит решить 5 реальных практических ситуаций из сферы информационной безопасности. По итогам аудита система присвоит вам ранг защиты и сгенерирует именной стеклянный сертификат.</p>
+                        <button class="btn-premium btn-neon" id="startQuestBtn">Начать Тестирование ➔</button>
+                    </div>
+
+                    <!-- Игровые шаги вопросов (Генерируются динамически через JS движок в app.js) -->
+                    <div class="quest-step" id="questQuestionBlock" style="display: none;">
+                        <div class="quest-progress-bar"><div class="progress-fill" id="questProgress"></div></div>
+                        <div class="quest-meta" id="questStepNum">Вопрос 1 из 5</div>
+                        <h3 class="quest-question-text" id="questText">Текст вопроса загружается...</h3>
+                        <div class="quest-options" id="questOptionsBlock">
+                            <!-- Кнопки вариантов ответов вставляются кодом -->
+                        </div>
+                    </div>
+
+                    <!-- Экран результатов и генерации сертификата -->
+                    <div class="quest-step" id="questResultBlock" style="display: none;">
+                        <div class="quest-icon">🏆</div>
+                        <h3>Аудит Безопасности Завершен</h3>
+                        <div class="result-score" id="resultScoreText">0 из 500 очков</div>
+                        <p class="quest-text" id="resultVerdict">Ваш вердикт рассчитывается...</p>
+                        
+                        <!-- Форма ввода имени для генерации стеклянной грамоты -->
+                        <div class="certificate-form">
+                            <input type="text" id="certNameInput" placeholder="Введите ваше Имя и Фамилию" class="glass-input" maxlength="30">
+                            <button class="btn-premium btn-neon" id="genCertBtn">Сгенерировать Сертификат</button>
+                        </div>
+                    </div>
+
+                    <!-- Финальный стеклянный сертификат (Frosted Glass Certificate) -->
+                    <div class="quest-step" id="questCertBlock" style="display: none;">
+                        <div class="frosted-certificate" id="frostedCertificate">
+                            <div class="cert-watermark">SECURE</div>
+                            <div class="cert-header">
+                                <span class="cert-logo">SleepKidd SafeWeb</span>
+                                <span class="cert-date" id="certDate">13.08.2026</span>
+                            </div>
+                            <div class="cert-body">
+                                <p class="cert-label">СЕРТИФИКАТ ЦИФРОВОЙ БЕЗОПАСНОСТИ</p>
+                                <h2 class="cert-owner-name" id="certHolderName">Иван Иванов</h2>
+                                <p class="cert-text">Успешно прошел комплексный независимый audit информационной грамотности, подтвердил знание сетевых протоколов защиты и получил официальный ранг:</p>
+                                <div class="cert-rank" id="certRankBadge">КИБЕР-ЭКСПЕРТ</div>
+                            </div>
+                            <div class="cert-footer">
+                                <div class="cert-sign">🔐 SECURITY ENGINE Verified</div>
+                                <div class="cert-id" id="certIdCode">ID: SW-984312</div>
+                            </div>
+                        </div>
+                        <button class="btn-premium btn-outline" id="restartQuestBtn" style="margin-top: 30px;">Пройти Аудит Заново 🔄</button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ПОДВАЛ САЙТА С СЕРТИФИЦИРОВАННЫМ КОПИРАЙТОМ СТУДИИ -->
+    <footer class="enterprise-footer">
+        <p><b>SleepKidd Studio</b> presents | <a href="https://sleepkidd.ru" target="_blank" style="color: var(--accent-neon); text-decoration: none; font-weight: 700;">sleepkidd.ru</a> | Все права защищены © 2026</p>
+        <p class="footer-sub">Информационные материалы адаптированы для повышения цифровой грамотности подростков и взрослых. v3.2 Premium Glass Architecture.</p>
+    </footer>
+
+</body>
+</html>
+
