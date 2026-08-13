@@ -1,0 +1,781 @@
+/* --- КОРНЕВЫЕ UI KIT ПЕРЕМЕННЫЕ ENTERPRISE СТИЛЯ v3.2 --- */
+:root {
+    --bg-main: #070A13;
+    --bg-glow: #0B1120;
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-highlight: rgba(255, 255, 255, 0.15);
+    --text-primary: #F3F4F6;
+    --text-secondary: #9CA3AF;
+    --accent-blue: #3B82F6;
+    --accent-purple: #8B5CF6;
+    --accent-neon: #00F5FF;
+    --accent-danger: #EF4444;
+    --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* --- ГЛОБАЛЬНЫЙ СБРОС И ОПТИМИЗАЦИЯ СЕТКИ --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: var(--font-family);
+    overflow-x: hidden;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+/* --- ЖИВОЙ СУПЕР-ВИЗУАЛ: ПЛАВАЮЩИЕ СФЕРЫ НА ФОНЕ --- */
+.ambient-layer {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.glow-sphere {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.22;
+    animation: floatAnimation 22s infinite ease-in-out;
+}
+
+.sphere-1 {
+    width: 450px;
+    height: 450px;
+    background: var(--accent-blue);
+    top: -10%;
+    right: -5%;
+}
+
+.sphere-2 {
+    width: 550px;
+    height: 550px;
+    background: var(--accent-purple);
+    bottom: -15%;
+    left: -10%;
+    animation-delay: -6s;
+}
+
+@keyframes floatAnimation {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(50px, -70px) scale(1.15); }
+}
+
+/* --- СТРОГАЯ СТЕЛЯННАЯ ШАПКА САЙТА (GLASS NAV) --- */
+.glass-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 85px;
+    z-index: 1000;
+    background: rgba(7, 10, 19, 0.5);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border-bottom: 1px solid var(--glass-border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 6%;
+}
+
+.logo {
+    font-size: 1.45rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    background: linear-gradient(135deg, var(--accent-neon), var(--accent-blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-links {
+    display: flex;
+    gap: 35px;
+}
+
+.nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--text-primary);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-neon);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.menu-burger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.menu-burger span {
+    width: 25px;
+    height: 2px;
+    background-color: var(--text-primary);
+    transition: 0.3s ease;
+}
+/* --- СТИЛИ ГЛАВНОГО КОНТЕЙНЕРА И HERO-ЭКРАНА --- */
+.main-container {
+    width: 100%;
+    position: relative;
+    z-index: 10;
+}
+
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 130px 6% 60px 6%;
+    text-align: center;
+}
+
+.hero-glass-card {
+    background: rgba(255, 255, 255, 0.01);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border: 1px solid var(--glass-border);
+    border-radius: 28px;
+    padding: 65px 45px;
+    max-width: 850px;
+    width: 100%;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5);
+    transition: border-color 0.4s ease;
+}
+
+.hero-glass-card:hover {
+    border-color: rgba(0, 245, 255, 0.18);
+}
+
+.security-badge {
+    display: inline-block;
+    padding: 6px 14px;
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    color: var(--accent-neon);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    border-radius: 50px;
+    margin-bottom: 25px;
+}
+
+.hero-title {
+    font-size: 2.6rem;
+    font-weight: 900;
+    line-height: 1.25;
+    letter-spacing: -0.5px;
+    margin-bottom: 20px;
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, #FFF, #9CA3AF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto 35px auto;
+}
+
+/* --- ПРЕМИАЛЬНЫЕ ИНТЕРАКТИВНЫЕ КНОПКИ (UI КИТ) --- */
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-premium {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 32px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+
+.btn-neon {
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+    color: #FFF;
+    border: none;
+    box-shadow: 0 10px 25px rgba(139, 92, 246, 0.25);
+}
+
+.btn-neon:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 35px rgba(0, 245, 255, 0.35);
+}
+
+.btn-outline {
+    background: var(--glass-bg);
+    color: var(--text-primary);
+    border: 1px solid var(--glass-border);
+}
+
+.btn-outline:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--text-primary);
+}
+
+/* --- СЕКЦИИ И ИНТЕРАКТИВНАЯ МАТРИЦА УГРОЗ --- */
+.section-container {
+    padding: 100px 6%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title {
+    font-size: 2.1rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.section-desc {
+    color: var(--text-secondary);
+    font-size: 1rem;
+}
+
+.threats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.threat-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 40px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.threat-card:hover {
+    background: rgba(255, 255, 255, 0.02);
+    border-color: rgba(59, 130, 246, 0.3);
+}
+
+.card-glass-blur {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    z-index: 1;
+}
+
+.card-content {
+    position: relative;
+    z-index: 2;
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.card-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.card-short-desc {
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+}
+/* --- СТИЛИ СКРЫТОГО И РАСКРЫТОГО СОСТОЯНИЯ ИНСТРУКЦИЙ --- */
+.card-expanded-content {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.threat-card.active .card-expanded-content {
+    max-height: 1000px;
+    opacity: 1;
+    margin-bottom: 25px;
+    padding-top: 15px;
+    border-top: 1px solid var(--glass-border);
+}
+
+.verdict-block {
+    background: rgba(255, 255, 255, 0.01);
+    border-left: 3px solid var(--accent-blue);
+    padding: 15px 20px;
+    border-radius: 0 12px 12px 0;
+}
+
+.verdict-block.beginner {
+    border-left-color: var(--accent-neon);
+}
+
+.verdict-block h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.verdict-block p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.btn-card-expand {
+    background: none;
+    border: none;
+    color: var(--accent-neon);
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+    transition: color 0.3s ease;
+}
+
+.btn-card-expand:hover {
+    color: var(--text-primary);
+}
+
+/* --- СТИЛИ ИНТЕРАКТИВНОГО СЛАЙДЕРА КЕЙСОВ --- */
+.cases-carousel-wrapper {
+    width: 100%;
+}
+
+.case-glass-box {
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border-radius: 24px;
+    padding: 45px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.perspective-toggle-zone {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 35px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.toggle-label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.toggle-container {
+    display: flex;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 4px;
+    border-radius: 10px;
+    border: 1px solid var(--glass-border);
+}
+
+.toggle-btn {
+    background: none;
+    border: none;
+    padding: 8px 18px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.toggle-btn.active {
+    background: var(--glass-highlight);
+    color: var(--text-primary);
+}
+
+.case-slider-content {
+    min-height: 180px;
+}
+
+.case-view-block h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.case-view-block p {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+.slider-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 35px;
+}
+
+.btn-nav-slider {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    color: var(--text-primary);
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-nav-slider:hover {
+    background: var(--glass-highlight);
+}
+
+.slider-dots {
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background: var(--glass-border);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background: var(--accent-neon);
+    transform: scale(1.3);
+}
+
+/* --- СТИЛИ ИНТЕРАКТИВНОГО КИБЕР-КВЕСТА --- */
+.quest-card-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.quest-glass-box {
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border-radius: 24px;
+    padding: 50px 40px;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.quest-step {
+    width: 100%;
+    text-align: center;
+}
+
+.quest-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.quest-step h3 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.quest-text {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+}
+
+.quest-progress-bar {
+    width: 100%;
+    height: 6px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 50px;
+    margin-bottom: 25px;
+    overflow: hidden;
+    border: 1px solid var(--glass-border);
+}
+
+.progress-fill {
+    width: 20%;
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-blue), var(--accent-neon));
+    transition: width 0.4s ease;
+}
+
+.quest-meta {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--accent-neon);
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.quest-question-text {
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    line-height: 1.4;
+}
+
+.quest-options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.quest-opt-btn {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--glass-border);
+    color: var(--text-primary);
+    padding: 16px 25px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.quest-opt-btn:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: var(--accent-blue);
+    transform: translateX(4px);
+}
+
+.result-score {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: var(--accent-neon);
+    margin-bottom: 15px;
+}
+
+.certificate-form {
+    display: flex;
+    gap: 15px;
+    max-width: 500px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.glass-input {
+    flex: 1;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--glass-border);
+    color: var(--text-primary);
+    padding: 14px 20px;
+    border-radius: 12px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.glass-input:focus {
+    border-color: var(--accent-neon);
+}
+
+/* --- СТИЛИ СТЕЛЯННОГО СЕРТИФИКАТА (FROSTED CERTIFICATE) --- */
+.frosted-certificate {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(35px);
+    -webkit-backdrop-filter: blur(35px);
+    border-radius: 20px;
+    padding: 40px;
+    position: relative;
+    overflow: hidden;
+    text-align: left;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.cert-watermark {
+    position: absolute;
+    font-size: 7rem;
+    font-weight: 950;
+    color: rgba(255, 255, 255, 0.015);
+    bottom: -20px;
+    right: -10px;
+    pointer-events: none;
+    user-select: none;
+}
+
+.cert-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+
+.cert-logo {
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: var(--accent-neon);
+}
+
+.cert-date {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.cert-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+}
+
+.cert-owner-name {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    color: #FFF;
+    text-shadow: 0 0 15px rgba(255,255,255,0.1);
+}
+
+.cert-text {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 25px;
+}
+
+.cert-rank {
+    display: inline-block;
+    padding: 8px 20px;
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #FFF;
+    box-shadow: 0 5px 15px rgba(139, 92, 246, 0.3);
+}
+
+.cert-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 35px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 15px;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+/* --- ПОДВАЛ И МЕДИА-ЗАПРОСЫ МОБИЛЬНОЙ АДАПТАЦИИ --- */
+.enterprise-footer {
+    background: rgba(5, 7, 14, 0.8);
+    border-top: 1px solid var(--glass-border);
+    padding: 40px 6%;
+    text-align: center;
+}
+
+.enterprise-footer p {
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.footer-sub {
+    color: var(--text-secondary) !important;
+    font-size: 0.8rem !important;
+}
+
+@media (max-width: 900px) {
+    .threats-grid {
+        grid-template-columns: 1fr;
+    }
+    .hero-title {
+        font-size: 2rem;
+    }
+    .perspective-toggle-zone {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+    .certificate-form {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 600px) {
+    .nav-links {
+        display: none;
+    }
+    .menu-burger {
+        display: flex;
+    }
+    .hero-glass-card {
+        padding: 40px 20px;
+    }
+    .case-glass-box, .quest-glass-box {
+        padding: 30px 20px;
+    }
+}
